@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Regional Sales Overview",
+    "tags": ["sales", "region", "executive"],
+    "content": "Use region as the primary dimension and include sales/profit KPIs with high-level filters."
+  },
+  {
+    "title": "Segment Performance Breakdown",
+    "tags": ["segment", "tableau", "comparison"],
+    "content": "Pair segment with sales and profit metrics to compare contribution across customer types."
+  }
+]

@@ -38,7 +38,17 @@ Design a command-line analytics copilot that turns natural-language user intents
 - Validate with Pydantic contracts before any API submission.
 - Auto-repair invalid payloads through bounded retry loop.
 
-## 5) Recommended Interfaces
+## 5) Current Implementation Slice
+
+The repository currently ships a runnable short-term scaffold in `src/li_agent/`:
+
+- Local SQLite SQL integration (`sql_tools.py`) with demo data bootstrap.
+- Deterministic cleaning pass (`data_prep.py`).
+- File-backed lightweight retrieval store (`rag.py`).
+- Tableau payload generation + validation (`tableau.py`) with optional Pydantic usage.
+- End-to-end orchestrator (`orchestrator.py`) and CLI entrypoint (`cli.py`).
+
+## 6) Recommended Interfaces
 
 - Agent-to-agent contract format: JSON schema typed envelopes.
 - Skill library format: per-agent `SKILL.md` with deterministic workflow steps.
@@ -53,6 +63,7 @@ Design a command-line analytics copilot that turns natural-language user intents
 ### Phase B (Intermediate)
 - Full Tableau generation path with RAG + Pydantic guardrails.
 - Schema-aware query planning and reusable transformations.
+- Production SQL connectors and governed query templates.
 
 ### Phase C (End State)
 - Multi-platform outputs (Tableau + PowerPoint/reporting channels).
