@@ -40,17 +40,6 @@ agents:
       - validation_status
     skills_path: skills_library/tableau-dashboard-agent/SKILL.md
 
-  - name: powerbi-dashboard-agent
-    purpose: Generate and manage PowerBI report/dashboard payloads with validated schemas.
-    inputs:
-      - semantic_dashboard_request
-      - prepared_dataset
-      - dashboard_knowledge_context
-    outputs:
-      - powerbi_payload
-      - validation_status
-    skills_path: skills_library/powerbi-dashboard-agent/SKILL.md
-
   - name: reporting-agent
     purpose: Convert validated analytics outputs into report-ready artifacts.
     inputs:

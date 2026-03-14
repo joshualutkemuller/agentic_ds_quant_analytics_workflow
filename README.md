@@ -8,7 +8,7 @@ Build an **LLM-integrated (LI) orchestration agent** that coordinates specialize
 
 - Query and join data from SQL systems.
 - Clean and transform datasets with reproducible pipelines.
-- Generate and manage Tableau and PowerBI dashboards via validated schemas.
+- Generate and manage Tableau dashboards via validated schemas.
 - Publish insights into reporting outputs (e.g., PowerPoint-ready artifacts).
 
 ## Build Milestones
@@ -37,9 +37,8 @@ This repository now includes a runnable **starter LI orchestrator** that execute
 1. SQL Integration Agent loads/query demo warehouse data.
 2. Data Prep Agent performs deterministic cleaning.
 3. Tableau Dashboard Agent retrieves guidance from a local RAG knowledge file.
-4. Tableau or PowerBI payload is generated from retrieved guidance.
-5. Dashboard payload is validated (Pydantic if installed, strict fallback otherwise).
-6. A terminal-ready report summary is returned.
+4. Tableau payload is validated (Pydantic if installed, strict fallback otherwise).
+5. A terminal-ready report summary is returned.
 
 ## Run the Prototype
 
@@ -66,4 +65,5 @@ Optional flags:
 1. Review `docs/agentic_workflow_blueprint.md`.
 2. Update `agents/agent_registry.yaml` when adding or changing agents.
 3. Add or edit agent skills under `skills_library/<agent-name>/SKILL.md`.
-4. Extend `src/li_agent/` modules for production tool adapters (Tableau API, PowerBI API, PowerPoint exporters, production SQL connectors).
+4. Extend `src/li_agent/` modules for additional tool adapters (Tableau API, PowerPoint exporters, production SQL connectors).
+4. Keep skills concise, procedural, and tool-integrated.
