@@ -54,7 +54,7 @@ The repository currently ships a runnable short-term scaffold in `src/li_agent/`
 - Skill library format: per-agent `SKILL.md` with deterministic workflow steps.
 - Tool adapters: SQL client, Tableau API wrapper, report exporter.
 
-## 7) Delivery Roadmap
+## 6) Delivery Roadmap
 
 ### Phase A (Short-Term)
 - Orchestrator, Data Prep, and base SQL execution flow.

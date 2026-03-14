@@ -66,3 +66,4 @@ Optional flags:
 2. Update `agents/agent_registry.yaml` when adding or changing agents.
 3. Add or edit agent skills under `skills_library/<agent-name>/SKILL.md`.
 4. Extend `src/li_agent/` modules for additional tool adapters (Tableau API, PowerPoint exporters, production SQL connectors).
+4. Keep skills concise, procedural, and tool-integrated.
