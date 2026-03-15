@@ -19,16 +19,6 @@ agents:
       - data_quality_report
     skills_path: skills_library/data-prep-agent/SKILL.md
 
-  - name: eda-specialist-agent
-    purpose: Perform exploratory data analysis to profile distributions, correlations, and anomalies.
-    inputs:
-      - transformed_dataset
-      - analytical_mode
-    outputs:
-      - eda_report
-      - exploratory_insights
-    skills_path: skills_library/eda-specialist-agent/SKILL.md
-
   - name: sql-integration-agent
     purpose: Manage SQL connectivity, schema introspection, and safe query execution.
     inputs:
@@ -49,17 +39,6 @@ agents:
       - tableau_payload
       - validation_status
     skills_path: skills_library/tableau-dashboard-agent/SKILL.md
-
-  - name: powerbi-dashboard-agent
-    purpose: Generate and manage PowerBI report/dashboard payloads with validated schemas.
-    inputs:
-      - semantic_dashboard_request
-      - prepared_dataset
-      - dashboard_knowledge_context
-    outputs:
-      - powerbi_payload
-      - validation_status
-    skills_path: skills_library/powerbi-dashboard-agent/SKILL.md
 
   - name: reporting-agent
     purpose: Convert validated analytics outputs into report-ready artifacts.

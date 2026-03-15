@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 
 @dataclass
@@ -10,7 +10,6 @@ class UserRequest:
 
     prompt: str
     output_format: str = "terminal"
-    mode: Optional[str] = None
 
 
 @dataclass
@@ -31,18 +30,8 @@ class DataArtifact:
 
 
 @dataclass
-class EDAReport:
-    """Exploratory data analysis output."""
-
-    row_count: int
-    columns: List[str]
-    numeric_profile: Dict[str, Dict[str, float]]
-    insights: List[str]
-
-
-@dataclass
 class DashboardPayload:
-    """Structured Tableau payload."""
+    """Structured dashboard payload for Tableau adapters."""
 
     title: str
     datasource: str
@@ -53,24 +42,10 @@ class DashboardPayload:
 
 
 @dataclass
-class PowerBIPayload:
-    """Structured PowerBI report payload."""
-
-    title: str
-    dataset: str
-    report_page: str
-    visuals: List[str]
-    measures: List[str]
-    filters: Dict[str, Any] = field(default_factory=dict)
-
-
-@dataclass
 class AgentResponse:
     """Final response returned by orchestrator."""
 
     plan: QueryPlan
     data: DataArtifact
-    eda: EDAReport
+    dashboard: DashboardPayload
     report: str
-    tableau_dashboard: Optional[DashboardPayload] = None
-    powerbi_dashboard: Optional[PowerBIPayload] = None
