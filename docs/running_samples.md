@@ -23,19 +23,15 @@ What you will see:
 - A formatted JSON payload printed to terminal.
 - `plan` with execution steps and selected target dashboard platform.
 - `data` rows and schema returned from SQL + data prep.
+- `eda` summary from the EDA specialist agent.
 - `tableau_dashboard` or `powerbi_dashboard` payload, depending on prompt intent.
 - `report` summary text.
 
 ## 2) Save Output to a File
 
 ```bash
-python cli.py "Build a portfolio management dashboard that helps visualize the clients allocations, exposures, risk metrics, performance, etc." > output/portfolio_dashboard.json
-```
-
-Create the folder first if needed:
-
-```bash
 mkdir -p output
+python cli.py "Build a portfolio management dashboard that helps visualize the clients allocations, exposures, risk metrics, performance, etc." > output/portfolio_dashboard.json
 ```
 
 Then inspect the file:
@@ -64,7 +60,18 @@ You should see:
 - `powerbi_dashboard` populated
 - `tableau_dashboard` as `null`
 
-## 4) Use Custom Database or Knowledge Base
+## 4) Use Mode + LLM Provider Flags
+
+```bash
+python cli.py "Build a portfolio management dashboard" \
+  --mode portfolio_management \
+  --llm-provider langchain \
+  --llm-model gpt-4o-mini
+```
+
+The output JSON includes mode and LLM metadata under `plan.metadata`.
+
+## 5) Use Custom Database or Knowledge Base
 
 ```bash
 python cli.py "Build a regional performance dashboard" \
@@ -72,7 +79,7 @@ python cli.py "Build a regional performance dashboard" \
   --kb data/tableau_knowledge.json
 ```
 
-## 5) Run Automated Tests
+## 6) Run Automated Tests
 
 ```bash
 python -m unittest discover -s tests -v

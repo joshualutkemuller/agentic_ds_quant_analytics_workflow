@@ -7,6 +7,7 @@ description: Coordinate multi-agent analytics execution from natural-language us
 
 1. Parse user intent into explicit objectives, constraints, and output format.
 2. Build a dependency-ordered execution plan across specialist agents (including Tableau vs PowerBI routing).
-3. Delegate subtasks with typed input/output contracts.
-4. Track status, retries, and failure causes per subtask.
-5. Assemble a terminal-ready summary of artifacts and next actions.
+3. Select analytical workflow mode (portfolio, securities lending/collateral, sales specialist, broad data scientist, or general).
+4. Delegate subtasks with typed input/output contracts.
+5. Track status, retries, and failure causes per subtask.
+6. Assemble a terminal-ready summary of artifacts and next actions.

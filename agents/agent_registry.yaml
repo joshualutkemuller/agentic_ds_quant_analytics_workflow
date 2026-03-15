@@ -19,6 +19,16 @@ agents:
       - data_quality_report
     skills_path: skills_library/data-prep-agent/SKILL.md
 
+  - name: eda-specialist-agent
+    purpose: Perform exploratory data analysis to profile distributions, correlations, and anomalies.
+    inputs:
+      - transformed_dataset
+      - analytical_mode
+    outputs:
+      - eda_report
+      - exploratory_insights
+    skills_path: skills_library/eda-specialist-agent/SKILL.md
+
   - name: sql-integration-agent
     purpose: Manage SQL connectivity, schema introspection, and safe query execution.
     inputs:

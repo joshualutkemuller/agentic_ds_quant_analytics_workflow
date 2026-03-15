@@ -4,7 +4,7 @@ import argparse
 import json
 from dataclasses import asdict
 
-from src.li_agent import LIOrchestratorAgent, UserRequest
+from src.li_agent import LIOrchestratorAgent, LLMConfig, UserRequest
 
 
 def main() -> None:
@@ -16,10 +16,28 @@ def main() -> None:
         default="data/tableau_knowledge.json",
         help="Path to dashboard knowledge-base json",
     )
+    parser.add_argument(
+        "--mode",
+        default=None,
+        choices=[
+            "general",
+            "portfolio_management",
+            "securities_lending_collateral",
+            "sales_specialist",
+            "broad_data_scientist",
+        ],
+        help="Optional analytical workflow mode",
+    )
+    parser.add_argument("--llm-provider", default="none", help="LLM provider label (openai/anthropic/local/langchain/etc)")
+    parser.add_argument("--llm-model", default="", help="Model name for selected provider")
     args = parser.parse_args()
 
-    orchestrator = LIOrchestratorAgent(db_path=args.db, knowledge_base_path=args.kb)
-    response = orchestrator.run(UserRequest(prompt=args.prompt))
+    orchestrator = LIOrchestratorAgent(
+        db_path=args.db,
+        knowledge_base_path=args.kb,
+        llm_config=LLMConfig(provider=args.llm_provider, model=args.llm_model),
+    )
+    response = orchestrator.run(UserRequest(prompt=args.prompt, mode=args.mode))
     print(json.dumps(asdict(response), indent=2))
 
 

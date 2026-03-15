@@ -10,6 +10,7 @@ class UserRequest:
 
     prompt: str
     output_format: str = "terminal"
+    mode: Optional[str] = None
 
 
 @dataclass
@@ -27,6 +28,16 @@ class DataArtifact:
     rows: List[Dict[str, Any]]
     schema: Dict[str, str]
     lineage: List[str] = field(default_factory=list)
+
+
+@dataclass
+class EDAReport:
+    """Exploratory data analysis output."""
+
+    row_count: int
+    columns: List[str]
+    numeric_profile: Dict[str, Dict[str, float]]
+    insights: List[str]
 
 
 @dataclass
@@ -59,6 +70,7 @@ class AgentResponse:
 
     plan: QueryPlan
     data: DataArtifact
+    eda: EDAReport
     report: str
     tableau_dashboard: Optional[DashboardPayload] = None
     powerbi_dashboard: Optional[PowerBIPayload] = None
