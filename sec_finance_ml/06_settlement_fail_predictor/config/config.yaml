@@ -1,0 +1,8 @@
+project_name: 06_settlement_fail_predictor
+model_target: t_plus_2_fail_flag
+thresholds:
+  warning: 0.7
+  critical: 0.85
+powerbi:
+  dataset_name: 06_settlement_fail_predictor_dataset
+  table_name: model_scores
