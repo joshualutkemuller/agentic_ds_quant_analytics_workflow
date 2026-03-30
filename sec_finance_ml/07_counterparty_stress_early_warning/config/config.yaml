@@ -1,0 +1,8 @@
+project_name: 07_counterparty_stress_early_warning
+model_target: stress_event_next_5d
+thresholds:
+  warning: 0.7
+  critical: 0.85
+powerbi:
+  dataset_name: 07_counterparty_stress_early_warning_dataset
+  table_name: model_scores

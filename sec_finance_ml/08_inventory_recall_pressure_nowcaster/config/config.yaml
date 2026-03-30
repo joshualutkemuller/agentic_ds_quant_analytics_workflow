@@ -1,0 +1,8 @@
+project_name: 08_inventory_recall_pressure_nowcaster
+model_target: recall_pressure_next_3d
+thresholds:
+  warning: 0.7
+  critical: 0.85
+powerbi:
+  dataset_name: 08_inventory_recall_pressure_nowcaster_dataset
+  table_name: model_scores
